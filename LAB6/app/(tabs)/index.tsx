@@ -1,5 +1,5 @@
 import ServiceCard from "@/components/ServiceCard";
-import Styles from "@/components/Styles";
+import styles from "@/components/Styles";
 import { Button } from "@react-navigation/elements";
 import { IconButton } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";

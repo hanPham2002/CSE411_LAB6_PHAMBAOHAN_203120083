@@ -40,6 +40,14 @@ const styles = StyleSheet.create<Styles>({
     paddingLeft: 12,
     height: 50,
   },
+  header: {
+    backgroundColor: "#D4A73E",
+    height: 50,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: 20,
+  },
   button: {
     backgroundColor: AppTheme.colors.primary,
     borderRadius: 10,

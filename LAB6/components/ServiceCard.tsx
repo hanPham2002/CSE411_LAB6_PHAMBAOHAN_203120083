@@ -41,7 +41,7 @@ const ServiceCard = ({ _id, name, price }: ServiceCardProps) => {
       <View style={{ flex: 1 }}>
         <Text
           numberOfLines={1}
-          ellipsizeMode="tail"
+          ellipsizeMode="tail" //cắt ngắn phần dư bằng dấu "...
           style={{ fontWeight: "500", fontSize: 16 }}
         >
           {name}

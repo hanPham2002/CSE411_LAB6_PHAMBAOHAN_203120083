@@ -14,6 +14,12 @@ export interface User {
   password: string;
   token: string;
 }
+export interface Customer {
+  id: string;
+  name: string;
+  phone: number;
+  totalSpent: number;
+}
 
 export const BASE_URL = "https://kami-backend-5rs0.onrender.com";
 
