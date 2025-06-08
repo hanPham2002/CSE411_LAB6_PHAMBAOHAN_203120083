@@ -38,6 +38,7 @@ export default function RootLayout() {
             headerTintColor: "#D4A73E",
           }}
         />
+
         <Stack.Screen
           name="serviceDetail"
           options={{
@@ -78,6 +79,13 @@ export default function RootLayout() {
           }}
         />
         <Stack.Screen name="+not-found" />
+        <Stack.Screen
+          name="AddCustomer"
+          options={{
+            title: "Add Customer",
+            headerTintColor: "#D4A73E",
+          }}
+        />
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>

@@ -15,7 +15,7 @@ export interface User {
   token: string;
 }
 export interface Customer {
-  id: string;
+  _id: string;
   name: string;
   phone: number;
   totalSpent: number;
