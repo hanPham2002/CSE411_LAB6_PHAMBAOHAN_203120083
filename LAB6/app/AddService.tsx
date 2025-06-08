@@ -21,29 +21,7 @@ import { router } from "expo-router";
 const AddService = () => {
   const [name, setName] = React.useState("");
   const [price, setPrice] = React.useState("");
-  //validate
-  // const [errorNumber, setErrorNumber] = useState("");
-  // const [errorText, setErrorText] = useState("");
-  // const handleAdd = () => {
-  //   //service name
-  //   if (!text.trim()) {
-  //     setErrorText("Please input a service name");
-  //   } else {
-  //     setErrorText(""); // reset lỗi khi nhập đúng
-  //     console.log("Successfully", text);
-  //     // Reset lại form
-  //     onChangeText("");
-  //   }
-  //   //price
-  //   if (!number.trim()) {
-  //     setErrorNumber("Please input price");
-  //   } else {
-  //     setErrorNumber(""); // reset lỗi khi nhập đúng
-  //     console.log("Successfully", number);
-  //     // Reset lại form
-  //     onChangeNumber("");
-  //   }
-  // };
+
   const BASE_URL = "https://kami-backend-5rs0.onrender.com";
   const handleAddService = async () => {
     try {
@@ -90,8 +68,7 @@ const AddService = () => {
         onChangeText={setName}
         value={name}
       />
-      {/* hiện lỗi */}
-      {/* {errorText ? <Text style={styles.errorText}>{errorText}</Text> : null} */}
+
       <Text style={styles.label}>Price *</Text>
       <TextInput
         style={Styles.input}

@@ -21,29 +21,7 @@ import { router } from "expo-router";
 const AddCustomer = () => {
   const [name, setName] = React.useState("");
   const [phone, setPhone] = React.useState("");
-  //validate
-  // const [errorNumber, setErrorNumber] = useState("");
-  // const [errorText, setErrorText] = useState("");
-  // const handleAdd = () => {
-  //   //service name
-  //   if (!text.trim()) {
-  //     setErrorText("Please input a service name");
-  //   } else {
-  //     setErrorText(""); // reset lỗi khi nhập đúng
-  //     console.log("Successfully", text);
-  //     // Reset lại form
-  //     onChangeText("");
-  //   }
-  //   //phone
-  //   if (!number.trim()) {
-  //     setErrorNumber("Please input phone");
-  //   } else {
-  //     setErrorNumber(""); // reset lỗi khi nhập đúng
-  //     console.log("Successfully", number);
-  //     // Reset lại form
-  //     onChangeNumber("");
-  //   }
-  // };
+
   const BASE_URL = "https://kami-backend-5rs0.onrender.com";
   const handleAddCustomer = async () => {
     try {
@@ -57,7 +35,6 @@ const AddCustomer = () => {
 
       const response = await axios.post(
         `${BASE_URL}/customers`,
-        //const [customer, setCustomer] = useState<Customer[]>([]);  (bên trang Customer)
 
         {
           name,
