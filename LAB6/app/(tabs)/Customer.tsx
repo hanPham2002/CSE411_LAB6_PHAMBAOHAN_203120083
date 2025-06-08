@@ -63,7 +63,7 @@ const Customers = () => {
         </View>
 
         <FlatList
-          style={{ marginBottom: 120 }}
+          style={{ marginBottom: 50 }}
           data={customer}
           renderItem={({ item }) => (
             <CustomerCard
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     zIndex: 9999,
-    marginBottom: 100,
+    marginBottom: 80,
     width: 50,
     height: 50,
   },
