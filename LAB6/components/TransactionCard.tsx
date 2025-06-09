@@ -8,6 +8,8 @@ const TransactionCard = ({
   customer,
   services,
   createdAt,
+  priceBeforePromotion,
+  status,
 }: Transaction) => {
   return (
     <SafeAreaView>
@@ -17,22 +19,30 @@ const TransactionCard = ({
           borderColor: "#ccc",
           borderRadius: 7,
           marginHorizontal: 10,
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-between",
           width: 390,
-          height: 120,
-          marginVertical: 10,
+          marginBottom: -60,
+          padding: 5,
         }}
       >
-        <View>
-          <Text>
-            {id} - {createdAt}
+        <View style={styles.card}>
+          <Text style={styles.textStyle}>
+            <Text style={{ color: "red" }}>{status}</Text> - {id} - {createdAt}
           </Text>
-          {services.map((item, index) => (
-            <Text key={index}>{item.name}</Text>
-          ))}
-          <Text>{customer.name}</Text>
+          <View
+            style={{ flexDirection: "row", justifyContent: "space-between" }}
+          >
+            <View>
+              {services.map((item, index) => (
+                <Text style={styles.textStyle} key={index}>
+                  - {item.name}
+                </Text>
+              ))}
+            </View>
+
+            <Text style={styles.price}>{priceBeforePromotion} đ</Text>
+          </View>
+
+          <Text style={styles.textStyle}>Customer : {customer.name}</Text>
         </View>
       </TouchableOpacity>
     </SafeAreaView>
@@ -41,4 +51,21 @@ const TransactionCard = ({
 
 export default TransactionCard;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  textStyle: {
+    paddingHorizontal: 2,
+    paddingBottom: 5,
+  },
+  price: {
+    color: "#D4A73E",
+    fontSize: 17,
+    marginRight: 30,
+    marginTop: 10,
+  },
+  card: {
+    padding: 5,
+    borderRadius: 7,
+    width: 390,
+    overflow: "hidden", // Ẩn nội dung bị tràn
+  },
+});

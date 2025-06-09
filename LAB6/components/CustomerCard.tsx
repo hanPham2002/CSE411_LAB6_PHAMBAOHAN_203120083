@@ -23,9 +23,6 @@ const CustomerCard = ({ name, phone, totalSpent }: CustomerProps) => {
         height: 120,
         marginVertical: 10,
       }}
-      // onPress={() => {
-      //   router.push()
-      // }}
     >
       <View style={{ flexDirection: "column" }}>
         <View>

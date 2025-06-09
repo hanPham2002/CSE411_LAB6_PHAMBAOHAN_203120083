@@ -63,7 +63,11 @@ const Customers = () => {
         </View>
 
         <FlatList
-          style={{ marginBottom: 50 }}
+          //	Áp dụng cho phần nội dung cuộn bên trong(contentContainerStyle là một prop đặc biệt của FlatList (và ScrollView) trong React Native)
+          contentContainerStyle={{
+            paddingBottom: 90,
+            // backgroundColor: "lightblue",
+          }}
           data={customer}
           renderItem={({ item }) => (
             <CustomerCard

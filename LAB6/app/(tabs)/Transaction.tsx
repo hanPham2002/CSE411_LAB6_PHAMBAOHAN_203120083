@@ -1,13 +1,25 @@
 import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Transaction } from "@/components/interface";
 import TransactionCard from "@/components/TransactionCard";
+import axios from "axios";
 
 const Transactions = () => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
+  useEffect(() => {
+    try {
+      axios
+        .get("https://kami-backend-5rs0.onrender.com/transactions")
+        .then((res) => {
+          setTransactions(res.data);
+        });
+    } catch (error: any) {
+      console.log(error.message);
+    }
+  }, []);
   return (
-    <SafeAreaView>
-      <View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={{ flex: 1 }}>
         <View
           style={{
             backgroundColor: "#D4A73E",
@@ -31,16 +43,21 @@ const Transactions = () => {
         </View>
 
         <FlatList
-          style={{ marginBottom: 50 }}
+          contentContainerStyle={{
+            paddingBottom: 90,
+
+            // backgroundColor: "lightblue",
+          }}
           data={transactions}
           renderItem={({ item }) => (
             <TransactionCard
               id={item.id}
               createdAt={item.createdAt}
               services={item.services}
-              _id={""}
-              customer={undefined}
-              createBy={undefined}
+              _id={item._id}
+              customer={item.customer}
+              status={item.status}
+              priceBeforePromotion={item.priceBeforePromotion}
             />
           )}
           keyExtractor={(item) => item._id}

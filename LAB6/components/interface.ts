@@ -26,7 +26,8 @@ export interface Transaction {
   createdAt: string;
   customer: Customer;
   services: Service[];
-  createBy: User;
+  status: string;
+  priceBeforePromotion: string;
 }
 
 export const BASE_URL = "https://kami-backend-5rs0.onrender.com";
