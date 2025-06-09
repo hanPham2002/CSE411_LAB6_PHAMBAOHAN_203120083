@@ -20,6 +20,14 @@ export interface Customer {
   phone: number;
   totalSpent: number;
 }
+export interface Transaction {
+  _id: string;
+  id: string;
+  createdAt: string;
+  customer: Customer;
+  services: Service[];
+  createBy: User;
+}
 
 export const BASE_URL = "https://kami-backend-5rs0.onrender.com";
 

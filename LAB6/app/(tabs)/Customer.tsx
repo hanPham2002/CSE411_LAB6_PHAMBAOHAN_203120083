@@ -35,7 +35,7 @@ const Customers = () => {
         <View
           style={{
             backgroundColor: "#D4A73E",
-            height: 50,
+            height: 70,
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "space-between",
